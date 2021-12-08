@@ -1,0 +1,59 @@
+<?php
+function add_employee_schema() {
+    $schema['employee'] = array(
+        'description' => 'Store Employee details',
+        'fields' => array(
+            'name' => array(
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => 'Name of the Employee',
+            ),
+            'email' => array(
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => 'email of employee',       
+            ),
+            'mobile' => array(
+                'type' => 'int',
+                'size' => 'big',
+                'length' => 10,
+                'not null' => FALSE,
+
+                'description' => 'number of the employee',
+            ),
+            'DOB' => array(
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => 'Date of birth of the employee',
+            ),
+            'gender' => array(
+                'type' => 'varchar',
+                'length' => 6,
+                'not null' => FALSE,
+                'description' => 'gender of an employee',
+            ),
+            'confirm' => array(
+                'type' => 'varchar',
+                'length' => 3,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => 'Is an employee older than 18 years'
+            ),
+        ),
+        'indexes' => array(
+        'name' => array('name'),
+        'email' => array('email'),
+        'mobile' => array('mobile'),
+        'DOB' => array('DOB'),
+        'gender' => array('gender'),
+        'confirm' => array('confirm'),
+        ),
+    );
+    return $schema;
+}

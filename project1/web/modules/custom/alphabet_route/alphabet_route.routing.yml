@@ -1,0 +1,23 @@
+alphabet_route:
+  path: '/alphabet/{alphabet}'
+  defaults:
+    _controller: Drupal\alphabet_route\Controller\AlphabetController::route
+  requirements:
+    _permission: 'access content'
+
+alphabet_page_route:
+  path: '/alphabet'
+  defaults:
+    _controller: Drupal\alphabet_route\Controller\PageController::display
+  requirements:
+    _permission: 'access content'
+
+alphabet_route.contactform:
+  path: '/contact_form'
+  defaults:
+    _form: '\Drupal\alphabet_route\Form\ContactForm'
+    _title: "User Contact Form"
+  requirements:
+   _permission: 'access content'
+
+

@@ -1,0 +1,7 @@
+add_employee.employee:
+  path: 'add_employee'
+  defaults:
+    _form: '\Drupal\add_employee\Form\AddEmployee'
+    _title: 'Employee Registration'
+  requirements:
+    _permission: 'access content'

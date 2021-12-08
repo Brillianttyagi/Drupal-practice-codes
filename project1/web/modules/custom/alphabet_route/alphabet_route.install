@@ -1,0 +1,52 @@
+<?php
+function alphabet_route_schema() {
+    $schema['contactform1'] = array(
+        'description' => 'Store User details',
+        'fields' => array(
+            'name' => array(
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => 'Name of the user',
+            ),
+            'email' => array(
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => 'email of user',       
+            ),
+            'age' => array(
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+
+                'description' => 'number of the user',
+            ),
+            'address' => array(
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => 'address of the user',
+            ),
+            'hobbies' => array(
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => FALSE,
+                'description' => 'hobbies of an user',
+            ),
+        ),
+        'primary key'=> array(
+            'email'),
+        'indexes' => array(
+        'name' => array('name'),
+        'age' => array('age'),
+        'address' => array('address'),
+        'hobbies' => array('hobbies'),
+        ),
+    );
+    return $schema;
+}

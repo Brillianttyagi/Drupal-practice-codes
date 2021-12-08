@@ -1,0 +1,27 @@
+rest_api.get:
+  path: 'rest_api/get.json'
+  defaults:
+    _controller: 'Drupal\rest_api_custom\Controller\RestApiController::get_api'
+  requirements:
+    _permission: 'access content'
+  
+rest_api.put:
+  path: 'rest_api/put.json'
+  defaults:
+    _controller: 'Drupal\rest_api_custom\Controller\RestApiController::get_api'
+  requirements:
+    _permission: 'access content'
+
+rest_api.post:
+  path: 'rest_api/post.json'
+  defaults:
+    _controller: 'Drupal\rest_api_custom\Controller\RestApiController::post_api'
+  requirements:
+    _permission: 'access content'
+
+rest_api.delete:
+  path: 'rest_api/delete.json'
+  defaults:
+    _controller: 'Drupal\rest_api_custom\Controller\RestApiController::delete_api'
+  requirements:
+    _permission: 'access content'

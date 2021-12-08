@@ -1,0 +1,12 @@
+name: Website theme
+type: theme
+description: 'A cuddly theme that offers extra fluffiness.'
+core_version_requirement: ^8 || ^9
+base theme: classy
+libraries:
+  - website_theme/global
+regions:
+  header: 'Header'
+  content: 'Content'
+  sidebar_first: 'Sidebar first'
+  footer: 'Footer'

@@ -1,0 +1,12 @@
+<?php
+    function alphabet_route_form_alter(&$form,  &$form_state, $form_id) {
+
+        if ($form_id == 'user_login_form') {
+            $form['name']['#attributes']['placeholder'] = ('enter username here');
+            $form['pass']['#attributes']['placeholder'] = ('enter password here ');
+            
+        }
+    }
+
+
+//restapi and block
