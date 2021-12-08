@@ -1,0 +1,88 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main content
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div{{ content_attributes.addClass('content') }}>
+      {{ content }}
+    </div>
+  {% endblock %}
+</div>
+
+    <div class="match_centre">
+    <h1>Match Centre</h1>
+    <div class="match_centre_group">
+
+
+        {% for content in page.content.match_centre %}
+        <div class="match_centre_box">
+        <div class="match_centre_upper">
+            <span class="match_centre_title">{{ content.field_title.0 }}</span>
+            <span class="match_centre_location">{{ content.field_ground.0 }}</span>
+        </div> 
+        <div class="match_centre_lower">
+            <div class='country1'>
+            <span class="country1_name">{{ content.field_country.0 }}</span>
+            <span class="country1_score">{{ content.field_coutry_score.0 }}/{{ content.field_country_wicket.0 }}</span>
+            </div>
+            <span id="vs">V</span>
+            <div class='country1'>
+            <span class="country1_name">{{ content.field_country2.0 }}</span>
+            <span class="country1_score">{{ content.field_country2_score.0 }}/{{ content.field_country2_wicket.0 }}</span>
+            </div>
+        </div>
+        <div class="match_centre_footer"> 
+            <p class="match_centre_desc">
+            {{ content.field_short_summery.0 }}
+            </p>
+            <p class="match_centre_date">
+            {{ content.field_date.0 }}
+            </p>
+        </div>
+        </div>
+        {% endfor %}
+
+
+    </div>
+
+
